@@ -1,0 +1,15 @@
+[project]
+name = "clean-backtesting"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "preprocessor",
+    "backtesting",
+]
+
+
+[tool.uv.sources]
+preprocessor = { git = "ssh://git@github.com/buffettproject/preprocessor", rev = "v0.16.0" }
+backtesting = { git = "ssh://git@github.com/buffettproject/backtesting.py", rev = "v0.6.0" }
