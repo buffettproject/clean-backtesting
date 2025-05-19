@@ -190,7 +190,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "backtesting", git = "ssh://git@github.com/buffettproject/backtesting.py?rev=v0.6.0" },
-    { name = "preprocessor", git = "ssh://git@github.com/buffettproject/preprocessor?rev=v0.16.0" },
+    { name = "preprocessor", git = "ssh://git@github.com/buffettproject/preprocessor?rev=v0.18.0" },
 ]
 
 [[package]]
@@ -513,8 +513,8 @@ wheels = [
 
 [[package]]
 name = "preprocessor"
-version = "0.16.0"
-source = { git = "ssh://git@github.com/buffettproject/preprocessor?rev=v0.16.0#fd00cbd8baec35ff628a34523474f31768417aa0" }
+version = "0.18.0"
+source = { git = "ssh://git@github.com/buffettproject/preprocessor?rev=v0.18.0#35d46b6675e54f7ff60d39eca2709ff57b32686c" }
 dependencies = [
     { name = "ccxt" },
     { name = "pandas" },
