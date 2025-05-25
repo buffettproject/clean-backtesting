@@ -25,12 +25,11 @@ merged = merged[merged.index >= "2023-06-28"]
 print(merged)
 
 
-
 print(merged.columns)
 print(merged.dtypes)
 
 
-class TrendFollowing(Strategy):
+class MosquitoGateio(Strategy):
     def init(self):
         super().init()
 
@@ -66,9 +65,9 @@ class TrendFollowing(Strategy):
 
 bt = Backtest(
     merged,
-    TrendFollowing,
+    MosquitoGateio,
     cash=100_000_000,
-    commission=0.0002, # Gateio taker fee: 0.01%
+    commission=0.0002,  # Gateio taker fee: 0.01%
     margin=0.2,
     trade_on_close=False,
 )

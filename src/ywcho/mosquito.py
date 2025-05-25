@@ -17,7 +17,7 @@ print(um)
 print(spot)
 
 
-class TrendFollowing(Strategy):
+class Mosquito(Strategy):
     def init(self):
         super().init()
 
@@ -53,9 +53,9 @@ class TrendFollowing(Strategy):
 
 bt = Backtest(
     um,
-    TrendFollowing,
+    Mosquito,
     cash=100_000_000,
-    commission=0.0002, # Gateio taker fee: 0.01%
+    commission=0.0002,  # Gateio taker fee: 0.01%
     margin=0.2,
     trade_on_close=False,
 )
