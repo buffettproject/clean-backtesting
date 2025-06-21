@@ -58,8 +58,8 @@ class BasicBasisGuard(Strategy):
         spread_z = (spread - spread_mean) / spread_std
         spread_3d_before = self.um["close"][-3] / self.spot["close"][-3] - 1
 
-        last_funding_rate = self.funding_rate["funding_rate"][-1]
-        avg_funding_rate = self.funding_rate["funding_rate"][-42:].mean()
+        last_funding_rate = self.funding_rate["funding_rate"].last()
+        avg_funding_rate = self.funding_rate["funding_rate"].tail(30).mean()
 
         if (
             (spread_z < 0)
@@ -130,37 +130,41 @@ print(stats)
 bt.plot()
 
 # Start                     2020-01-01 00:00:00
-# End                       2025-05-25 09:03:00
-# Duration                   1971 days 09:03:00
-# Exposure Time [%]                    22.34531
-# Equity Final [$]               195524212.9985
-# Equity Peak [$]                210248217.9625
-# Return [%]                           95.52421
-# Buy & Hold Return [%]              1391.73679
-# Return (Ann.) [%]                    13.21362
-# Volatility (Ann.) [%]                27.95412
-# CAGR [%]                             13.21806
-# Sharpe Ratio                          0.47269
-# Sortino Ratio                         1.06947
-# Calmar Ratio                          0.45593
-# Alpha [%]                            34.31547
-# Beta                                  0.04398
-# Max. Drawdown [%]                   -28.98175
-# Avg. Drawdown [%]                      -1.012
-# Max. Drawdown Duration      651 days 03:27:00
-# Avg. Drawdown Duration        5 days 14:25:00
-# # Trades                                 2640
-# Win Rate [%]                         38.59848
-# Best Trade [%]                       14.84495
-# Worst Trade [%]                      -2.02662
-# Avg. Trade [%]                        0.02523
-# Max. Trade Duration           0 days 08:00:00
-# Avg. Trade Duration           0 days 04:00:00
-# Profit Factor                         1.08856
-# Expectancy [%]                        0.03096
-# SQN                                   1.39935
-# Kelly Criterion                       0.02903
-# _strategy                          Basisguard
+# End                       2025-06-20 00:00:00
+# Duration                   1997 days 00:00:00
+# Exposure Time [%]                    40.04004
+# Equity Final [$]             1173157842.89701
+# Equity Peak [$]              1202371040.25682
+# Commissions [$]               100024554.61895
+# Return [%]                         1073.15784
+# Buy & Hold Return [%]              1334.45774
+# Return (Ann.) [%]                    56.80247
+# Volatility (Ann.) [%]                53.64496
+# CAGR [%]                              56.8378
+# Sharpe Ratio                          1.05886
+# Sortino Ratio                         2.95164
+# Calmar Ratio                          2.91389
+# Alpha [%]                           732.14995
+# Beta                                  0.25554
+# Max. Drawdown [%]                    -19.4937
+# Avg. Drawdown [%]                    -3.24004
+# Max. Drawdown Duration      148 days 00:00:00
+# Avg. Drawdown Duration       23 days 00:00:00
+# # Trades                                  492
+# Win Rate [%]                         55.89431
+# Best Trade [%]                       16.95742
+# Worst Trade [%]                     -14.18428
+# Avg. Trade [%]                        0.54467
+# Max. Trade Duration           1 days 00:00:00
+# Avg. Trade Duration           1 days 00:00:00
+# Profit Factor                         1.68542
+# Expectancy [%]                        0.60435
+# SQN                                   3.12616
+# Kelly Criterion                       0.20614
+# _strategy                     BasicBasisGuard
 # _equity_curve                             ...
-# _trades                          Size  Ent...
+# _trades                         Size  Entr...
 # dtype: object
+
+
+# 2025-06-21
