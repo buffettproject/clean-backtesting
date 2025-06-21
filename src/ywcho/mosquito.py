@@ -55,7 +55,7 @@ bt = Backtest(
     um,
     Mosquito,
     cash=100_000_000,
-    commission=0.0002,  # Gateio taker fee: 0.01%
+    commission=0.0002,  # Gateio taker fee: 0.01% / Slippage: 0.01% (Binance has 0.04% taker fee)
     margin=0.2,
     trade_on_close=False,
 )
