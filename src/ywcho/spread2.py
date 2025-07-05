@@ -14,7 +14,7 @@ um_1d_pandas = um_1d_pandas.loc[:"2025-06-20"]
 print(type(um_1d_pandas.index))
 
 
-class BasicBasisGuard(Strategy):
+class Spread2(Strategy):
     def init(self):
         super().init()
         self.funding_rate = None
@@ -66,7 +66,7 @@ class BasicBasisGuard(Strategy):
 
 bt = Backtest(
     um_1d_pandas,
-    BasicBasisGuard,
+    Spread2,
     cash=100_000_000,
     commission=0.0002,  # 0.0002  # Gateio taker fee: 0.01%
     margin=1,
